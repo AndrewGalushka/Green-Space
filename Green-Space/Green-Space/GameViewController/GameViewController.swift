@@ -59,12 +59,12 @@ class GameViewController: UIViewController {
         
         view.insertSubview(imageView, at: 0)
         
-        UIView.animate(withDuration: 1.0, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
             imageView.center =  CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
             imageView.transform = CGAffineTransform.init(rotationAngle: 0.523599)
-        }) { (completed) in
-//            imageView.alpha = 1.0
-//            imageView.removeFromSuperview()
+        }) { (flag) in
+            imageView.alpha = 1.0
+            imageView.removeFromSuperview()
         }
     }
 }
@@ -79,13 +79,21 @@ extension GameViewController: CAAnimationDelegate {
 extension GameViewController: FallingApplesGameViewDelegate {
     func fallingApplesGameViewDidTapOnApple() {
         successHitCounter += 1
-        showImage(imageGenerator.imageForSuccess())
+        
+        if successHitCounter % 2 == 0 {
+            showImage(imageGenerator.imageForSuccess())
+        }
+        
         print("failureHits:\(failureHitCounter), successHists:\(successHitCounter)")
     }
     
     func fallingApplesGameViewDidFailApple() {
         failureHitCounter += 1
-        showImage(imageGenerator.imageForFailure())
+        
+        if failureHitCounter % 2 == 0 {
+            showImage(imageGenerator.imageForFailure())
+        }
+        
         print("failureHits:\(failureHitCounter), successHists:\(successHitCounter)")
     }
 }
