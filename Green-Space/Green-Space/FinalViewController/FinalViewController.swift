@@ -12,12 +12,14 @@ import SwiftFireworks
 class FinalViewController: UIViewController {
 
     @IBOutlet private weak var messageLabel: UILabel!
+    @IBOutlet private weak var tenYear: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupDesign()
         messageLabel.alpha = 0.0
+        tenYear.alpha = 0.0
     }
 
     func setupDesign() {
@@ -38,6 +40,7 @@ class FinalViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             UIView.animate(withDuration: 0.25, animations: {
                 self.messageLabel.alpha = 1.0
+                self.tenYear.alpha = 1.0
             })
         }
     }
