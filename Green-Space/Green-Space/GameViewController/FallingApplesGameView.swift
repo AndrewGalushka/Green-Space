@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol FallingApplesGameViewDelegate: class {
+    func fallingApplesGameViewDidTapOnApple()
+    func fallingApplesGameViewDidFailApple()
+}
+
 class FallingApplesGameView: UIView {
     
     let appleSize = CGSize(width: 50, height: 50)
@@ -16,11 +21,12 @@ class FallingApplesGameView: UIView {
     var timer: Timer?
     var apples = [CALayer]()
     
+    weak var delegate: FallingApplesGameViewDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureRecognizerHandler(tapGesture:)))
-        gesture.delegate = self
         
         addGestureRecognizer(gesture)
     }
@@ -45,16 +51,16 @@ class FallingApplesGameView: UIView {
     
     func addApple() {
         let origin = CGPoint(x: randXCoordinate(forAppleSize: appleSize),
-                             y: 0.0)
+                             y: -bounds.height - safeAreaInsets.top)
         let cornerRadius = max(appleSize.width, appleSize.height) / 2
-        let bkColor = UIColor.red.cgColor
         let animationEndPoint = CGPoint(x: randXCoordinate(forAppleSize: appleSize),
-                                        y: bounds.height)
+                                        y: bounds.height + safeAreaInsets.bottom + appleSize.height)
         
         let appleLayer = CALayer()
         appleLayer.frame = CGRect(x: origin.x, y: origin.y, width: appleSize.width, height: appleSize.height)
         appleLayer.cornerRadius = cornerRadius
-        appleLayer.backgroundColor = bkColor
+        appleLayer.backgroundColor = UIColor.clear.cgColor
+        appleLayer.contents = UIImage(named: "apple2_colored")?.cgImage
         
         apples.append(appleLayer)
         layer.addSublayer(appleLayer)
@@ -74,8 +80,10 @@ class FallingApplesGameView: UIView {
         let dropAnimation = CABasicAnimation(keyPath: "position")
         dropAnimation.fromValue = startPoint
         dropAnimation.toValue = endPoint
-        
+        dropAnimation.delegate = self
         dropAnimation.duration = 3.0
+        dropAnimation.isRemovedOnCompletion = false
+        dropAnimation.fillMode = CAMediaTimingFillMode.forwards
         
         return dropAnimation
     }
@@ -95,10 +103,9 @@ class FallingApplesGameView: UIView {
                 let opacityAmimation = CABasicAnimation(keyPath: "opacity")
                 opacityAmimation.byValue = -1.0
                 opacityAmimation.duration = 0.25
-                
-                CATransaction.setCompletionBlock {
-                    apple.removeFromSuperlayer()
-                }
+                opacityAmimation.delegate = self
+                opacityAmimation.isRemovedOnCompletion = false
+                opacityAmimation.fillMode = CAMediaTimingFillMode.forwards
                 
                 apple.add(opacityAmimation, forKey: nil)
                 
@@ -108,12 +115,33 @@ class FallingApplesGameView: UIView {
     }
 }
 
-extension FallingApplesGameView: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return false
-    }
-
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
+extension FallingApplesGameView: CAAnimationDelegate {
+    
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        
+        for apple in apples {
+            
+            if anim == apple.animation(forKey: "position") {
+                apple.removeFromSuperlayer()
+                
+                let index = apples.index(of: apple)
+                
+                if let index = index {
+                    apples.remove(at: index)
+                    delegate?.fallingApplesGameViewDidTapOnApple()
+                }
+                
+            } else if anim == apple.animation(forKey: "opacity") {
+                apple.removeFromSuperlayer()
+                
+                let index = apples.index(of: apple)
+                
+                if let index = index {
+                    apples.remove(at: index)
+                    delegate?.fallingApplesGameViewDidFailApple()
+                }
+            }
+        }
     }
 }
+
