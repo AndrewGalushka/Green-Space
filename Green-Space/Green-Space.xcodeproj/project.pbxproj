@@ -16,6 +16,7 @@
 		8D12C34721A01C4400335F83 /* Green_SpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C34621A01C4400335F83 /* Green_SpaceUITests.swift */; };
 		8D12C35721A01D1E00335F83 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C35621A01D1E00335F83 /* GameViewController.swift */; };
 		8D12C35921A01D2F00335F83 /* ViewControllerAfterGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C35821A01D2F00335F83 /* ViewControllerAfterGame.swift */; };
+		8D12C35D21A01FA200335F83 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C35C21A01FA200335F83 /* Design.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8D12C34821A01C4400335F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D12C35621A01D1E00335F83 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8D12C35821A01D2F00335F83 /* ViewControllerAfterGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAfterGame.swift; sourceTree = "<group>"; };
+		8D12C35C21A01FA200335F83 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				8D12C32D21A01C4400335F83 /* Assets.xcassets */,
 				8D12C32F21A01C4400335F83 /* LaunchScreen.storyboard */,
 				8D12C33221A01C4400335F83 /* Info.plist */,
+				8D12C35C21A01FA200335F83 /* Design.swift */,
 			);
 			path = "Green-Space";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				8D12C35721A01D1E00335F83 /* GameViewController.swift in Sources */,
 				8D12C32721A01C4200335F83 /* AppDelegate.swift in Sources */,
 				8D12C35921A01D2F00335F83 /* ViewControllerAfterGame.swift in Sources */,
+				8D12C35D21A01FA200335F83 /* Design.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
