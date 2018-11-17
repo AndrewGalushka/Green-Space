@@ -36,7 +36,7 @@ class GameViewController: UIViewController {
         fadeView.startFadeIn(delegate: self)
     }
     
-    var prefersStatusBarHidden: Bool {
+    override var prefersStatusBarHidden: Bool {
         return true
     }
     
