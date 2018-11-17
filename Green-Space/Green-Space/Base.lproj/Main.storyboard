@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZUH-ep-b3S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,36 +25,6 @@
             </objects>
             <point key="canvasLocation" x="153" y="109"/>
         </scene>
-        <!--Game View Controller-->
-        <scene sceneID="e5I-DW-DNN">
-            <objects>
-                <viewController storyboardIdentifier="GameViewController" id="ZUH-ep-b3S" customClass="GameViewController" customModule="Green_Space" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dE9-lk-qMf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NwK-li-0yB" customClass="FallingApplesGameView" customModule="Green_Space" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="NwK-li-0yB" firstAttribute="top" secondItem="6oe-cP-nWa" secondAttribute="top" id="PVa-Vt-tg2"/>
-                            <constraint firstItem="NwK-li-0yB" firstAttribute="leading" secondItem="6oe-cP-nWa" secondAttribute="leading" id="SWN-t5-hbp"/>
-                            <constraint firstItem="6oe-cP-nWa" firstAttribute="bottom" secondItem="NwK-li-0yB" secondAttribute="bottom" id="qxG-0c-S19"/>
-                            <constraint firstItem="6oe-cP-nWa" firstAttribute="trailing" secondItem="NwK-li-0yB" secondAttribute="trailing" id="rEa-zC-7uq"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6oe-cP-nWa"/>
-                    </view>
-                    <connections>
-                        <outlet property="fallingApplesGameView" destination="NwK-li-0yB" id="jNZ-Fb-NsU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7m-ng-gjm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1022" y="108"/>
-        </scene>
         <!--View Controller After Game-->
         <scene sceneID="5rs-LJ-TTS">
             <objects>
@@ -68,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IdO-AL-dNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847" y="108"/>
+            <point key="canvasLocation" x="1452" y="119"/>
         </scene>
     </scenes>
 </document>
