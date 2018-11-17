@@ -14,10 +14,13 @@ class StartViewController: UIViewController {
     
     fileprivate var gameScreen: GameViewController?
     fileprivate var startTapGesture: UITapGestureRecognizer!
+    fileprivate let fadeView = FadeView(frame: UIScreen.main.bounds)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = Design.Colors.background
+
         logo.layer.removeAllAnimations()
         logo.transform = CGAffineTransform.identity
         
@@ -26,11 +29,16 @@ class StartViewController: UIViewController {
     }
 
     @objc fileprivate func startGame() {
+        fadeView.backgroundColor = .white
+        view.addSubview(fadeView)
+        fadeView.startFadeOut(delegate: self)
+
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
         rotationAnimation.toValue = NSNumber(value: Double.pi * 2.0)
         rotationAnimation.duration = 1;
         rotationAnimation.isCumulative = true;
         rotationAnimation.repeatCount = HUGE;
+        
         logo.layer.add(rotationAnimation, forKey: "rotationAnimation")
         
         let timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
@@ -39,15 +47,6 @@ class StartViewController: UIViewController {
             self.logo.layer.speed += 0.3
         }
         timer.fire()
-        
-        let opacitiAnimation = CABasicAnimation(keyPath: "opacity")
-        opacitiAnimation.fromValue = 1
-        opacitiAnimation.toValue = 0
-        opacitiAnimation.repeatCount = 1
-        opacitiAnimation.duration = 3
-        opacitiAnimation.isCumulative = true
-        opacitiAnimation.delegate = self
-        logo.layer.add(opacitiAnimation, forKey: "opacity")
     }
 }
 
@@ -56,6 +55,7 @@ extension StartViewController: CAAnimationDelegate {
     
     internal func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         logo.isHidden = true
+        fadeView.removeFromSuperview()
         
         let vc = GameViewController.instantiateFromStoryboard()
         

@@ -12,6 +12,8 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var fallingApplesGameView: FallingApplesGameView!
     
+    fileprivate let fadeView = FadeView(frame: UIScreen.main.bounds)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +26,21 @@ class GameViewController: UIViewController {
         fallingApplesGameView.start()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        fadeView.startFadeIn(delegate: self)
+    }
+    
     func setupDesign() {
+        fadeView.backgroundColor = .white
         view.backgroundColor = Design.Colors.background
+        view.addSubview(fadeView)
+    }
+}
+
+extension GameViewController: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        fadeView.removeFromSuperview()
     }
 }
