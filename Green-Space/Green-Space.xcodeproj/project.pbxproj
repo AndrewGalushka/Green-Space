@@ -12,8 +12,6 @@
 		8D12C32C21A01C4200335F83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D12C32A21A01C4200335F83 /* Main.storyboard */; };
 		8D12C32E21A01C4400335F83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D12C32D21A01C4400335F83 /* Assets.xcassets */; };
 		8D12C33121A01C4400335F83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D12C32F21A01C4400335F83 /* LaunchScreen.storyboard */; };
-		8D12C33C21A01C4400335F83 /* Green_SpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C33B21A01C4400335F83 /* Green_SpaceTests.swift */; };
-		8D12C34721A01C4400335F83 /* Green_SpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C34621A01C4400335F83 /* Green_SpaceUITests.swift */; };
 		8D12C35921A01D2F00335F83 /* ViewControllerAfterGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C35821A01D2F00335F83 /* ViewControllerAfterGame.swift */; };
 		8D12C35D21A01FA200335F83 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8D12C36121A0218400335F83 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -52,11 +50,7 @@
 		8D12C33021A01C4400335F83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D12C33221A01C4400335F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D12C33721A01C4400335F83 /* Green-SpaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Green-SpaceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D12C33B21A01C4400335F83 /* Green_SpaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Green_SpaceTests.swift; sourceTree = "<group>"; };
-		8D12C33D21A01C4400335F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D12C34221A01C4400335F83 /* Green-SpaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Green-SpaceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D12C34621A01C4400335F83 /* Green_SpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Green_SpaceUITests.swift; sourceTree = "<group>"; };
-		8D12C34821A01C4400335F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D12C35821A01D2F00335F83 /* ViewControllerAfterGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAfterGame.swift; sourceTree = "<group>"; };
 		8D12C36A21A0323700335F83 /* GameViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameViewController.storyboard; sourceTree = "<group>"; };
 		8D12C36B21A0323700335F83 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -95,8 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				8D12C32521A01C4200335F83 /* Green-Space */,
-				8D12C33A21A01C4400335F83 /* Green-SpaceTests */,
-				8D12C34521A01C4400335F83 /* Green-SpaceUITests */,
 				8D12C32421A01C4200335F83 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,24 +118,6 @@
 				8D12C33221A01C4400335F83 /* Info.plist */,
 			);
 			path = "Green-Space";
-			sourceTree = "<group>";
-		};
-		8D12C33A21A01C4400335F83 /* Green-SpaceTests */ = {
-			isa = PBXGroup;
-			children = (
-				8D12C33B21A01C4400335F83 /* Green_SpaceTests.swift */,
-				8D12C33D21A01C4400335F83 /* Info.plist */,
-			);
-			path = "Green-SpaceTests";
-			sourceTree = "<group>";
-		};
-		8D12C34521A01C4400335F83 /* Green-SpaceUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8D12C34621A01C4400335F83 /* Green_SpaceUITests.swift */,
-				8D12C34821A01C4400335F83 /* Info.plist */,
-			);
-			path = "Green-SpaceUITests";
 			sourceTree = "<group>";
 		};
 		8D12C36921A0323700335F83 /* GameViewController */ = {
@@ -315,7 +289,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D12C33C21A01C4400335F83 /* Green_SpaceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +296,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D12C34721A01C4400335F83 /* Green_SpaceUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
