@@ -15,8 +15,8 @@ protocol FallingApplesGameViewDelegate: class {
 
 class FallingApplesGameView: UIView {
     
-    let appleSize = CGSize(width: 50, height: 50)
-    let initailApearnceInterval = 0.5
+    let appleSize = CGSize(width: 70, height: 70)
+    let initailApearnceInterval = 0.75
     
     var timer: Timer?
     var apples = [CALayer]()
@@ -94,9 +94,16 @@ class FallingApplesGameView: UIView {
         
         let location = tapGesture.location(in: self)
         
+        
         for apple in apples {
             
-            if apple.presentation()?.frame.contains(location) ?? false {
+            let xOffset: CGFloat = 10.0
+            let yOffset: CGFloat = 10.0
+            
+            guard var normalFrame = apple.presentation()?.frame.insetBy(dx: -xOffset, dy: -yOffset) else { continue }
+            normalFrame = CGRect(x: normalFrame.origin.x - xOffset / 2.0, y: normalFrame.origin.y - yOffset / 2.0, width: normalFrame.width, height: normalFrame.height)
+            
+            if normalFrame.contains(location) {
                 
                 CATransaction.begin()
                 
