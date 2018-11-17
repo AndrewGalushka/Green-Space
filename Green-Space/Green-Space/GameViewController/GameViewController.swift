@@ -40,7 +40,8 @@ class GameViewController: UIViewController {
 }
 
 extension GameViewController: CAAnimationDelegate {
-    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    
+    internal func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         fadeView.removeFromSuperview()
     }
 }

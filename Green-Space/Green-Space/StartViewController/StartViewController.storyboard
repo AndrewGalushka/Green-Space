@@ -24,9 +24,17 @@
                                     <constraint firstAttribute="width" secondItem="WkC-4b-plQ" secondAttribute="height" multiplier="647:800" id="P8L-la-hH8"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Яблочный замес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRO-Ug-3XX">
+                                <rect key="frame" x="63.5" y="126" width="248" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" white="0.69999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="LRO-Ug-3XX" firstAttribute="centerX" secondItem="P5J-k0-i2r" secondAttribute="centerX" id="04y-LS-Gap"/>
+                            <constraint firstItem="LRO-Ug-3XX" firstAttribute="top" secondItem="P5J-k0-i2r" secondAttribute="top" constant="106" id="RLa-pH-xRg"/>
                             <constraint firstItem="WkC-4b-plQ" firstAttribute="centerY" secondItem="P5J-k0-i2r" secondAttribute="centerY" id="V7h-dp-Sed"/>
                             <constraint firstItem="WkC-4b-plQ" firstAttribute="width" secondItem="VAo-dm-Zt1" secondAttribute="width" multiplier="0.4" id="bvv-Aq-BsD"/>
                             <constraint firstItem="WkC-4b-plQ" firstAttribute="centerX" secondItem="P5J-k0-i2r" secondAttribute="centerX" id="u9j-I0-Crl"/>
@@ -34,7 +42,8 @@
                         <viewLayoutGuide key="safeArea" id="P5J-k0-i2r"/>
                     </view>
                     <connections>
-                        <outlet property="logo" destination="WkC-4b-plQ" id="giY-Du-CGn"/>
+                        <outlet property="logoImageView" destination="WkC-4b-plQ" id="8hE-mF-qW1"/>
+                        <outlet property="titleLabel" destination="LRO-Ug-3XX" id="sRC-ZZ-WMP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlv-zL-T55" userLabel="First Responder" sceneMemberID="firstResponder"/>

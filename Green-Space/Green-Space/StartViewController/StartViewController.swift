@@ -10,7 +10,8 @@ import UIKit
 
 class StartViewController: UIViewController {
 
-    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     fileprivate var gameScreen: GameViewController?
     fileprivate var startTapGesture: UITapGestureRecognizer!
@@ -21,11 +22,22 @@ class StartViewController: UIViewController {
         
         view.backgroundColor = Design.Colors.background
 
-        logo.layer.removeAllAnimations()
-        logo.transform = CGAffineTransform.identity
+        titleLabel.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+
+        logoImageView.layer.removeAllAnimations()
+        logoImageView.transform = CGAffineTransform.identity
         
         startTapGesture = UITapGestureRecognizer(target: self, action: #selector(startGame))
-        logo.addGestureRecognizer(startTapGesture)
+        logoImageView.addGestureRecognizer(startTapGesture)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView.animate(withDuration: 1) {
+            self.titleLabel.transform = CGAffineTransform.identity
+        }
+        
     }
 
     @objc fileprivate func startGame() {
@@ -39,12 +51,12 @@ class StartViewController: UIViewController {
         rotationAnimation.isCumulative = true;
         rotationAnimation.repeatCount = HUGE;
         
-        logo.layer.add(rotationAnimation, forKey: "rotationAnimation")
+        logoImageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
         
         let timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
-            self.logo.layer.timeOffset = self.logo.layer.convertTime(CACurrentMediaTime(), from: nil)
-            self.logo.layer.beginTime = CACurrentMediaTime()
-            self.logo.layer.speed += 0.3
+            self.logoImageView.layer.timeOffset = self.logoImageView.layer.convertTime(CACurrentMediaTime(), from: nil)
+            self.logoImageView.layer.beginTime = CACurrentMediaTime()
+            self.logoImageView.layer.speed += 0.3
         }
         timer.fire()
     }
@@ -54,7 +66,7 @@ class StartViewController: UIViewController {
 extension StartViewController: CAAnimationDelegate {
     
     internal func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        logo.isHidden = true
+        logoImageView.isHidden = true
         fadeView.removeFromSuperview()
         
         let vc = GameViewController.instantiateFromStoryboard()
