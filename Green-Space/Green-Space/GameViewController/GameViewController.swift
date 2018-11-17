@@ -66,10 +66,9 @@ class GameViewController: UIViewController {
     func showImage(_ image: UIImage) {
         let rect = CGRect(x: -view.bounds.width / 4, y: -view.bounds.height / 4, width: view.bounds.width / 2.0, height: view.bounds.height / 2.0)
         let imageView = UIImageView(frame: rect)
-        imageView.alpha = 0.8
         imageView.image = image
         
-        view.insertSubview(imageView, aboveSubview: fallingApplesGameView)
+        view.insertSubview(imageView, belowSubview: fallingApplesGameView)
         
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
             imageView.center =  CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
