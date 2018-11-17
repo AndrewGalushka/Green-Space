@@ -16,7 +16,7 @@ protocol FallingApplesGameViewDelegate: class {
 class FallingApplesGameView: UIView {
     
     let appleSize = CGSize(width: 50, height: 50)
-    let initailApearnceInterval = 1.0
+    let initailApearnceInterval = 0.5
     
     var timer: Timer?
     var apples = [CALayer]()
@@ -64,7 +64,7 @@ class FallingApplesGameView: UIView {
         
         apples.append(appleLayer)
         layer.addSublayer(appleLayer)
-        appleLayer.add(createDroppedAnimation(startPoint: origin, endPoint: animationEndPoint), forKey: nil)
+        appleLayer.add(createDroppedAnimation(startPoint: origin, endPoint: animationEndPoint), forKey: "position")
     }
     
     func randXCoordinate(forAppleSize: CGSize) -> CGFloat {
@@ -107,7 +107,7 @@ class FallingApplesGameView: UIView {
                 opacityAmimation.isRemovedOnCompletion = false
                 opacityAmimation.fillMode = CAMediaTimingFillMode.forwards
                 
-                apple.add(opacityAmimation, forKey: nil)
+                apple.add(opacityAmimation, forKey: "opacity")
                 
                 CATransaction.commit()
             }

@@ -14,20 +14,30 @@ class GameViewController: UIViewController {
     
     fileprivate let fadeView = FadeView(frame: UIScreen.main.bounds)
     
+    var successHitCounter = 0
+    var failureHitCounter = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupDesign()
+        fallingApplesGameView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        startGame()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         fadeView.startFadeIn(delegate: self)
+    }
+    
+    var prefersStatusBarHidden: Bool {
+        return true
     }
     
     func setupDesign() {
@@ -50,8 +60,14 @@ extension GameViewController: CAAnimationDelegate {
 
 extension GameViewController: FallingApplesGameViewDelegate {
     func fallingApplesGameViewDidTapOnApple() {
+        successHitCounter += 1
+        
+        print("failureHits:\(failureHitCounter), successHists:\(successHitCounter)")
     }
     
     func fallingApplesGameViewDidFailApple() {
+        failureHitCounter += 1
+        
+        print("failureHits:\(failureHitCounter), successHists:\(successHitCounter)")
     }
 }
