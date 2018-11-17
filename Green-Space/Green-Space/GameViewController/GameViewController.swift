@@ -47,3 +47,11 @@ extension GameViewController: CAAnimationDelegate {
         fadeView.removeFromSuperview()
     }
 }
+
+extension GameViewController: FallingApplesGameViewDelegate {
+    func fallingApplesGameViewDidTapOnApple() {
+    }
+    
+    func fallingApplesGameViewDidFailApple() {
+    }
+}

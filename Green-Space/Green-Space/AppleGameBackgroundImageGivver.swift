@@ -6,9 +6,20 @@
 //  Copyright © 2018 Galushka. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol AppleGameBackgroundImageGivver: class {
-    func imageForSuccess()
-    func imageForFailure()
+    func imageForSuccess() -> UIImage
+    func imageForFailure() -> UIImage
+}
+
+extension AppleGameBackgroundImageGivver {
+    
+    func imageForSuccess() -> UIImage {
+        return UIImage()
+    }
+    
+    func imageForFailure() -> UIImage {
+        return UIImage()
+    }
 }
