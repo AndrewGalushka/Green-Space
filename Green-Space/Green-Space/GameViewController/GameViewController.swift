@@ -69,14 +69,14 @@ class GameViewController: UIViewController {
         imageView.alpha = 0.8
         imageView.image = image
         
-        view.insertSubview(imageView, at: 0)
+        view.insertSubview(imageView, aboveSubview: fallingApplesGameView)
         
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
             imageView.center =  CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
             imageView.transform = CGAffineTransform.init(rotationAngle: 0.523599)
         }) { (flag) in
-            imageView.alpha = 1.0
-            imageView.removeFromSuperview()
+//            imageView.alpha = 1.0
+//            imageView.removeFromSuperview()
         }
     }
 }
