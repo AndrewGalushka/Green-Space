@@ -16,6 +16,15 @@ class FallingApplesGameView: UIView {
     var timer: Timer?
     var apples = [CALayer]()
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureRecognizerHandler(tapGesture:)))
+        gesture.delegate = self
+        
+        addGestureRecognizer(gesture)
+    }
+    
     func start() {
         timer = Timer(timeInterval: initailApearnceInterval, target: self, selector: #selector(timerTickActionHandler), userInfo: nil, repeats: true)
         RunLoop.current.add(timer!, forMode: RunLoop.Mode.common)
@@ -36,7 +45,7 @@ class FallingApplesGameView: UIView {
     
     func addApple() {
         let origin = CGPoint(x: randXCoordinate(forAppleSize: appleSize),
-                             y: -appleSize.height)
+                             y: 0.0)
         let cornerRadius = max(appleSize.width, appleSize.height) / 2
         let bkColor = UIColor.red.cgColor
         let animationEndPoint = CGPoint(x: randXCoordinate(forAppleSize: appleSize),
@@ -62,15 +71,49 @@ class FallingApplesGameView: UIView {
     
     func createDroppedAnimation(startPoint: CGPoint, endPoint: CGPoint) -> CAAnimation {
         
-        let dropAnimation = CASpringAnimation(keyPath: "position")
+        let dropAnimation = CABasicAnimation(keyPath: "position")
         dropAnimation.fromValue = startPoint
         dropAnimation.toValue = endPoint
-        dropAnimation.damping = 12.0
-        dropAnimation.duration = 20.0
-        dropAnimation.initialVelocity = -10.0
-//        dropAnimation.initialVelocity = -2.0
-//        dropAnimation.mass = 2.0
+        
+        dropAnimation.duration = 3.0
         
         return dropAnimation
+    }
+    
+    @objc func tapGestureRecognizerHandler(tapGesture: UITapGestureRecognizer) {
+        
+        guard tapGesture.state == .ended else { return }
+        
+        let location = tapGesture.location(in: self)
+        
+        for apple in apples {
+            
+            if apple.presentation()?.frame.contains(location) ?? false {
+                
+                CATransaction.begin()
+                
+                let opacityAmimation = CABasicAnimation(keyPath: "opacity")
+                opacityAmimation.byValue = -1.0
+                opacityAmimation.duration = 0.25
+                
+                CATransaction.setCompletionBlock {
+                    apple.removeFromSuperlayer()
+                }
+                
+                apple.add(opacityAmimation, forKey: nil)
+                
+                CATransaction.commit()
+            }
+        }
+    }
+}
+
+extension FallingApplesGameView: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+    }
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
