@@ -22,6 +22,8 @@
 		8D12C37121A0325400335F83 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C37021A0325400335F83 /* Design.swift */; };
 		8D7AC0AA21A0575D00C49B82 /* AppleGameBackgroundImageGivver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7AC0A921A0575D00C49B82 /* AppleGameBackgroundImageGivver.swift */; };
 		9DC5B32A21A0613D00F47B02 /* ImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC5B32921A0613D00F47B02 /* ImageGenerator.swift */; };
+		9DC5B33221A06E2200F47B02 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC5B33121A06E2200F47B02 /* FinalViewController.swift */; };
+		9DC5B33421A06E2A00F47B02 /* FinalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC5B33321A06E2A00F47B02 /* FinalViewController.storyboard */; };
 		9E4D21BA21A04EAD00921744 /* LabelX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4D21B921A04EAD00921744 /* LabelX.swift */; };
 		9E8AF7A121A01EAC00EBBD32 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF7A021A01EAC00EBBD32 /* Extentions.swift */; };
 		9E8AF7A321A01EDC00EBBD32 /* StartViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E8AF7A221A01EDC00EBBD32 /* StartViewController.storyboard */; };
@@ -62,6 +64,8 @@
 		8D12C37021A0325400335F83 /* Design.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		8D7AC0A921A0575D00C49B82 /* AppleGameBackgroundImageGivver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleGameBackgroundImageGivver.swift; sourceTree = "<group>"; };
 		9DC5B32921A0613D00F47B02 /* ImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerator.swift; sourceTree = "<group>"; };
+		9DC5B33121A06E2200F47B02 /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
+		9DC5B33321A06E2A00F47B02 /* FinalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinalViewController.storyboard; sourceTree = "<group>"; };
 		9E4D21B921A04EAD00921744 /* LabelX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelX.swift; sourceTree = "<group>"; };
 		9E8AF7A021A01EAC00EBBD32 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		9E8AF7A221A01EDC00EBBD32 /* StartViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartViewController.storyboard; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				8D12C32621A01C4200335F83 /* AppDelegate.swift */,
 				8D12C36921A0323700335F83 /* GameViewController */,
 				9E8AF7A421A01F6300EBBD32 /* StartViewController */,
+				9DC5B33021A06E0400F47B02 /* FinalViewController */,
 				8D12C35821A01D2F00335F83 /* ViewControllerAfterGame.swift */,
 				8D12C32A21A01C4200335F83 /* Main.storyboard */,
 				9E8AF7A621A0390600EBBD32 /* FadeView.swift */,
@@ -140,6 +145,15 @@
 				9DC5B32921A0613D00F47B02 /* ImageGenerator.swift */,
 			);
 			path = GameViewController;
+			sourceTree = "<group>";
+		};
+		9DC5B33021A06E0400F47B02 /* FinalViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9DC5B33121A06E2200F47B02 /* FinalViewController.swift */,
+				9DC5B33321A06E2A00F47B02 /* FinalViewController.storyboard */,
+			);
+			path = FinalViewController;
 			sourceTree = "<group>";
 		};
 		9E8AF7A421A01F6300EBBD32 /* StartViewController */ = {
@@ -260,6 +274,7 @@
 				8D12C32E21A01C4400335F83 /* Assets.xcassets in Resources */,
 				8D12C36D21A0323700335F83 /* GameViewController.storyboard in Resources */,
 				9E8AF7A321A01EDC00EBBD32 /* StartViewController.storyboard in Resources */,
+				9DC5B33421A06E2A00F47B02 /* FinalViewController.storyboard in Resources */,
 				8D12C32C21A01C4200335F83 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D12C37121A0325400335F83 /* Design.swift in Sources */,
+				9DC5B33221A06E2200F47B02 /* FinalViewController.swift in Sources */,
 				8D12C36E21A0323700335F83 /* GameViewController.swift in Sources */,
 				8D12C32921A01C4200335F83 /* StartViewController.swift in Sources */,
 				9E4D21BA21A04EAD00921744 /* LabelX.swift in Sources */,
