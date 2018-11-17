@@ -18,26 +18,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Яблочный замес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRO-Ug-3XX" customClass="LabelX" customModule="Green_Space" customModuleProvider="target">
+                                <rect key="frame" x="-37.5" y="158" width="450" height="371"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="31"/>
+                                <color key="textColor" white="0.69999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                        <real key="value" value="1.6000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clockwise" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple_logo_ grey" translatesAutoresizingMaskIntoConstraints="NO" id="WkC-4b-plQ">
                                 <rect key="frame" x="112.5" y="251" width="150" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WkC-4b-plQ" secondAttribute="height" multiplier="647:800" id="P8L-la-hH8"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Яблочный замес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRO-Ug-3XX">
-                                <rect key="frame" x="63.5" y="126" width="248" height="39.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <color key="textColor" white="0.69999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LRO-Ug-3XX" firstAttribute="centerX" secondItem="P5J-k0-i2r" secondAttribute="centerX" id="04y-LS-Gap"/>
-                            <constraint firstItem="LRO-Ug-3XX" firstAttribute="top" secondItem="P5J-k0-i2r" secondAttribute="top" constant="106" id="RLa-pH-xRg"/>
+                            <constraint firstItem="LRO-Ug-3XX" firstAttribute="centerX" secondItem="WkC-4b-plQ" secondAttribute="centerX" id="B8c-ZJ-Hwu"/>
+                            <constraint firstItem="LRO-Ug-3XX" firstAttribute="height" secondItem="WkC-4b-plQ" secondAttribute="height" multiplier="2" id="CZh-PL-OAu"/>
+                            <constraint firstItem="LRO-Ug-3XX" firstAttribute="width" secondItem="WkC-4b-plQ" secondAttribute="width" multiplier="3" id="UMt-XK-Mea"/>
                             <constraint firstItem="WkC-4b-plQ" firstAttribute="centerY" secondItem="P5J-k0-i2r" secondAttribute="centerY" id="V7h-dp-Sed"/>
                             <constraint firstItem="WkC-4b-plQ" firstAttribute="width" secondItem="VAo-dm-Zt1" secondAttribute="width" multiplier="0.4" id="bvv-Aq-BsD"/>
                             <constraint firstItem="WkC-4b-plQ" firstAttribute="centerX" secondItem="P5J-k0-i2r" secondAttribute="centerX" id="u9j-I0-Crl"/>
+                            <constraint firstItem="LRO-Ug-3XX" firstAttribute="centerY" secondItem="WkC-4b-plQ" secondAttribute="centerY" id="xMr-sa-uUp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P5J-k0-i2r"/>
                     </view>
@@ -48,6 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlv-zL-T55" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
     <resources>
