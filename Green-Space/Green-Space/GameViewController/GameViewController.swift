@@ -111,7 +111,6 @@ extension GameViewController {
         queue.addOperation {
         self.messageDaria.forEach { char in
             DispatchQueue.main.asyncAfter(deadline: .now() + summedDelay, execute: {
-                print(char)
                 self.startMessageLable.text?.append(char)
             })
             
