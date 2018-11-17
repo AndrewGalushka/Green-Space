@@ -63,18 +63,15 @@ class StartViewController: UIViewController {
 }
 
 // MARK: - CAAnimationDelegate
-extension StartViewController: CAAnimationDelegate {
+extension StartViewController: FadeViewDelegate {
     
-    internal func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    internal func animationDidStop() {
         logoImageView.isHidden = true
         fadeView.removeFromSuperview()
         
         let vc = GameViewController.instantiateFromStoryboard()
-        
         gameScreen = vc
         
-        present(vc, animated: false) {
-            
-        }
+        present(vc, animated: false) {}
     }
 }
