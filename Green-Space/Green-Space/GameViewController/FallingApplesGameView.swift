@@ -31,15 +31,16 @@ class FallingApplesGameView: UIView {
     }
     
     @objc private func timerTickActionHandler() {
-        print(randXCoordinate(forAppleSize: appleSize))
+        addApple()
     }
     
     func addApple() {
         let origin = CGPoint(x: randXCoordinate(forAppleSize: appleSize),
-                             y: -(appleSize.height / 2))
+                             y: -appleSize.height)
         let cornerRadius = max(appleSize.width, appleSize.height) / 2
         let bkColor = UIColor.red.cgColor
-//        let animationEndPoint =
+        let animationEndPoint = CGPoint(x: randXCoordinate(forAppleSize: appleSize),
+                                        y: bounds.height)
         
         let appleLayer = CALayer()
         appleLayer.frame = CGRect(x: origin.x, y: origin.y, width: appleSize.width, height: appleSize.height)
@@ -48,7 +49,7 @@ class FallingApplesGameView: UIView {
         
         apples.append(appleLayer)
         layer.addSublayer(appleLayer)
-//        appleLayer.add( dropAnimation(startPoint: origin, endPoint: <#T##CGPoint#>), forKey: <#T##String?#>)
+        appleLayer.add(createDroppedAnimation(startPoint: origin, endPoint: animationEndPoint), forKey: nil)
     }
     
     func randXCoordinate(forAppleSize: CGSize) -> CGFloat {
@@ -59,11 +60,16 @@ class FallingApplesGameView: UIView {
         return randXCoordinate
     }
     
-    func dropAnimation(startPoint: CGPoint, endPoint: CGPoint) -> CAAnimation {
+    func createDroppedAnimation(startPoint: CGPoint, endPoint: CGPoint) -> CAAnimation {
+        
         let dropAnimation = CASpringAnimation(keyPath: "position")
         dropAnimation.fromValue = startPoint
         dropAnimation.toValue = endPoint
-        dropAnimation.duration = 3.0
+        dropAnimation.damping = 12.0
+        dropAnimation.duration = 20.0
+        dropAnimation.initialVelocity = -10.0
+//        dropAnimation.initialVelocity = -2.0
+//        dropAnimation.mass = 2.0
         
         return dropAnimation
     }
