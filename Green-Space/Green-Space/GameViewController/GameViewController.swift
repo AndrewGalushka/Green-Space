@@ -52,14 +52,14 @@ class GameViewController: UIViewController {
     }
     
     func showImage(_ image: UIImage) {
-        let rect = CGRect(x: -view.bounds.width / 2, y: -view.bounds.height / 2, width: view.bounds.width / 2.0, height: view.bounds.height / 2.0)
+        let rect = CGRect(x: -view.bounds.width / 4, y: -view.bounds.height / 4, width: view.bounds.width / 2.0, height: view.bounds.height / 2.0)
         let imageView = UIImageView(frame: rect)
         imageView.alpha = 0.8
         imageView.image = image
         
         view.insertSubview(imageView, at: 0)
         
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
             imageView.center =  CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
             imageView.transform = CGAffineTransform.init(rotationAngle: 0.523599)
         }) { (flag) in
@@ -80,7 +80,7 @@ extension GameViewController: FallingApplesGameViewDelegate {
     func fallingApplesGameViewDidTapOnApple() {
         successHitCounter += 1
         
-        if successHitCounter == 10 {
+        if successHitCounter == 12 {
             let finishVC = ViewControllerAfterGame.instantiateFromStoryboard()
             self.present(finishVC, animated: true, completion: nil)
         }
