@@ -132,6 +132,7 @@ extension GameViewController {
         }
         }
         
+        queue.addOperation {
         self.messageKaren.forEach { char in
             DispatchQueue.main.asyncAfter(deadline: .now() + summedDelay, execute: {
                 print(char)
@@ -142,6 +143,7 @@ extension GameViewController {
         }
         
         summedDelay += 1
+        }
         
         queue.addOperation {
         self.messageKaren.forEach { char in
