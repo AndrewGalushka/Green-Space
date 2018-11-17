@@ -1,0 +1,16 @@
+PODS:
+  - SwiftFireworks (0.1.0)
+
+DEPENDENCIES:
+  - SwiftFireworks
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftFireworks
+
+SPEC CHECKSUMS:
+  SwiftFireworks: 63447e004fea5db5856a56065f4f0d2df23715b1
+
+PODFILE CHECKSUM: f549e45a57017cc32ef60acec0970e4dc2e8655f
+
+COCOAPODS: 1.5.3
