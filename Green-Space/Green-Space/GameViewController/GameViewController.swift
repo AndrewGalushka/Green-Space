@@ -66,13 +66,14 @@ class GameViewController: UIViewController {
     func showImage(_ image: UIImage) {
         let rect = CGRect(x: -view.bounds.width / 4, y: -view.bounds.height / 4, width: view.bounds.width / 2.0, height: view.bounds.height / 2.0)
         let imageView = UIImageView(frame: rect)
+        imageView.contentMode = .scaleAspectFit
         imageView.image = image
         
         view.insertSubview(imageView, belowSubview: fallingApplesGameView)
         
         UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseOut, animations: {
             imageView.center =  CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
-            imageView.transform = CGAffineTransform.init(rotationAngle: 0.523599)
+            imageView.transform = CGAffineTransform.init(rotationAngle: -CGFloat.random(in: -1.0...1.0))
         }) { (flag) in
 //            imageView.alpha = 1.0
 //            imageView.removeFromSuperview()
