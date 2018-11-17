@@ -49,6 +49,20 @@ class GameViewController: UIViewController {
     func startGame() {
         fallingApplesGameView.start()
     }
+    
+    func showImage(_ image: UIImage) {
+        let imageView = UIImageView(frame: view.bounds.offsetBy(dx: -view.bounds.width, dy: 0))
+        imageView.layer.anchorPoint = CGPoint(x: imageView.bounds.width / 2, y: imageView.bounds.height)
+        view.addSubview(imageView)
+        
+        UIView.animate(withDuration: 1.0, animations: {
+            imageView.center =  CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
+            imageView.transform = CGAffineTransform.init(rotationAngle: 0.523599)
+        }) { (completed) in
+            imageView.alpha = 1.0
+            imageView.removeFromSuperview()
+        }
+    }
 }
 
 extension GameViewController: CAAnimationDelegate {
@@ -61,13 +75,13 @@ extension GameViewController: CAAnimationDelegate {
 extension GameViewController: FallingApplesGameViewDelegate {
     func fallingApplesGameViewDidTapOnApple() {
         successHitCounter += 1
-        
+        showImage(UIImage())
         print("failureHits:\(failureHitCounter), successHists:\(successHitCounter)")
     }
     
     func fallingApplesGameViewDidFailApple() {
         failureHitCounter += 1
-        
+        showImage(UIImage())
         print("failureHits:\(failureHitCounter), successHists:\(successHitCounter)")
     }
 }
