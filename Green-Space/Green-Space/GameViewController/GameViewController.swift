@@ -181,8 +181,8 @@ extension GameViewController: FallingApplesGameViewDelegate {
     func fallingApplesGameViewDidTapOnApple() {
         successHitCounter += 1
         
-        if successHitCounter == 12 {
-            let finishVC = ViewControllerAfterGame.instantiateFromStoryboard()
+        if successHitCounter == 10 {
+            let finishVC = FinalViewController.instantiateFromStoryboard()
             self.present(finishVC, animated: true, completion: nil)
         }
         
