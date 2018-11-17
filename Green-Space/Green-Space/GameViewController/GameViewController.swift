@@ -22,8 +22,6 @@ class GameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        fallingApplesGameView.start()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,6 +34,10 @@ class GameViewController: UIViewController {
         fadeView.backgroundColor = .white
         view.backgroundColor = Design.Colors.background
         view.addSubview(fadeView)
+    }
+    
+    func startGame() {
+        fallingApplesGameView.start()
     }
 }
 
