@@ -94,6 +94,7 @@ class FallingApplesGameView: UIView {
         
         let location = tapGesture.location(in: self)
         
+        var isHitted = false
         
         for apple in apples {
             
@@ -104,6 +105,8 @@ class FallingApplesGameView: UIView {
             normalFrame = CGRect(x: normalFrame.origin.x - xOffset / 2.0, y: normalFrame.origin.y - yOffset / 2.0, width: normalFrame.width, height: normalFrame.height)
             
             if normalFrame.contains(location) {
+                
+                isHitted = true
                 
                 CATransaction.begin()
                 
@@ -118,6 +121,10 @@ class FallingApplesGameView: UIView {
                 
                 CATransaction.commit()
             }
+        }
+        
+        if !isHitted {
+            delegate?.fallingApplesGameViewDidFailApple()
         }
     }
 }
@@ -135,7 +142,6 @@ extension FallingApplesGameView: CAAnimationDelegate {
                 
                 if let index = index {
                     apples.remove(at: index)
-                    delegate?.fallingApplesGameViewDidTapOnApple()
                 }
                 
             } else if anim == apple.animation(forKey: "opacity") {
@@ -145,7 +151,7 @@ extension FallingApplesGameView: CAAnimationDelegate {
                 
                 if let index = index {
                     apples.remove(at: index)
-                    delegate?.fallingApplesGameViewDidFailApple()
+                    delegate?.fallingApplesGameViewDidTapOnApple()
                 }
             }
         }

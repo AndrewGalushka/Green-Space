@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var fallingApplesGameView: FallingApplesGameView!
     
     fileprivate let fadeView = FadeView(frame: UIScreen.main.bounds)
+    let imageGenerator = ImageGenerator()
     
     var successHitCounter = 0
     var failureHitCounter = 0
@@ -51,16 +52,19 @@ class GameViewController: UIViewController {
     }
     
     func showImage(_ image: UIImage) {
-        let imageView = UIImageView(frame: view.bounds.offsetBy(dx: -view.bounds.width, dy: 0))
-        imageView.layer.anchorPoint = CGPoint(x: imageView.bounds.width / 2, y: imageView.bounds.height)
-        view.addSubview(imageView)
+        let rect = CGRect(x: -view.bounds.width / 2, y: -view.bounds.height / 2, width: view.bounds.width / 2.0, height: view.bounds.height / 2.0)
+        let imageView = UIImageView(frame: rect)
+        imageView.alpha = 0.8
+        imageView.image = image
+        
+        view.insertSubview(imageView, at: 0)
         
         UIView.animate(withDuration: 1.0, animations: {
             imageView.center =  CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
             imageView.transform = CGAffineTransform.init(rotationAngle: 0.523599)
         }) { (completed) in
-            imageView.alpha = 1.0
-            imageView.removeFromSuperview()
+//            imageView.alpha = 1.0
+//            imageView.removeFromSuperview()
         }
     }
 }
@@ -75,13 +79,13 @@ extension GameViewController: CAAnimationDelegate {
 extension GameViewController: FallingApplesGameViewDelegate {
     func fallingApplesGameViewDidTapOnApple() {
         successHitCounter += 1
-        showImage(UIImage())
+        showImage(imageGenerator.imageForSuccess())
         print("failureHits:\(failureHitCounter), successHists:\(successHitCounter)")
     }
     
     func fallingApplesGameViewDidFailApple() {
         failureHitCounter += 1
-        showImage(UIImage())
+        showImage(imageGenerator.imageForFailure())
         print("failureHits:\(failureHitCounter), successHists:\(successHitCounter)")
     }
 }
