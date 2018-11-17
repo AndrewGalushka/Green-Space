@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		8D12C32721A01C4200335F83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C32621A01C4200335F83 /* AppDelegate.swift */; };
-		8D12C32921A01C4200335F83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C32821A01C4200335F83 /* ViewController.swift */; };
+		8D12C32921A01C4200335F83 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C32821A01C4200335F83 /* StartViewController.swift */; };
 		8D12C32C21A01C4200335F83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D12C32A21A01C4200335F83 /* Main.storyboard */; };
 		8D12C32E21A01C4400335F83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D12C32D21A01C4400335F83 /* Assets.xcassets */; };
 		8D12C33121A01C4400335F83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D12C32F21A01C4400335F83 /* LaunchScreen.storyboard */; };
 		8D12C33C21A01C4400335F83 /* Green_SpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C33B21A01C4400335F83 /* Green_SpaceTests.swift */; };
 		8D12C34721A01C4400335F83 /* Green_SpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C34621A01C4400335F83 /* Green_SpaceUITests.swift */; };
+		8D12C35721A01D1E00335F83 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C35621A01D1E00335F83 /* GameViewController.swift */; };
+		8D12C35921A01D2F00335F83 /* ViewControllerAfterGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C35821A01D2F00335F83 /* ViewControllerAfterGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		8D12C32321A01C4200335F83 /* Green-Space.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Green-Space.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D12C32621A01C4200335F83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8D12C32821A01C4200335F83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8D12C32821A01C4200335F83 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		8D12C32B21A01C4200335F83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D12C32D21A01C4400335F83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D12C33021A01C4400335F83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		8D12C34221A01C4400335F83 /* Green-SpaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Green-SpaceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D12C34621A01C4400335F83 /* Green_SpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Green_SpaceUITests.swift; sourceTree = "<group>"; };
 		8D12C34821A01C4400335F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D12C35621A01D1E00335F83 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		8D12C35821A01D2F00335F83 /* ViewControllerAfterGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAfterGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				8D12C32621A01C4200335F83 /* AppDelegate.swift */,
-				8D12C32821A01C4200335F83 /* ViewController.swift */,
+				8D12C32821A01C4200335F83 /* StartViewController.swift */,
+				8D12C35621A01D1E00335F83 /* GameViewController.swift */,
+				8D12C35821A01D2F00335F83 /* ViewControllerAfterGame.swift */,
 				8D12C32A21A01C4200335F83 /* Main.storyboard */,
 				8D12C32D21A01C4400335F83 /* Assets.xcassets */,
 				8D12C32F21A01C4400335F83 /* LaunchScreen.storyboard */,
@@ -256,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D12C32921A01C4200335F83 /* ViewController.swift in Sources */,
+				8D12C32921A01C4200335F83 /* StartViewController.swift in Sources */,
+				8D12C35721A01D1E00335F83 /* GameViewController.swift in Sources */,
 				8D12C32721A01C4200335F83 /* AppDelegate.swift in Sources */,
+				8D12C35921A01D2F00335F83 /* ViewControllerAfterGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
