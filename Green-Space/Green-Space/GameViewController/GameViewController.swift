@@ -80,6 +80,11 @@ extension GameViewController: FallingApplesGameViewDelegate {
     func fallingApplesGameViewDidTapOnApple() {
         successHitCounter += 1
         
+        if successHitCounter == 10 {
+            let finishVC = ViewControllerAfterGame.instantiateFromStoryboard()
+            self.present(finishVC, animated: true, completion: nil)
+        }
+        
         if successHitCounter % 2 == 0 {
             showImage(imageGenerator.imageForSuccess())
         }
