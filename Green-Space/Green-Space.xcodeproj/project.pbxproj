@@ -20,6 +20,7 @@
 		8D12C36E21A0323700335F83 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C36B21A0323700335F83 /* GameViewController.swift */; };
 		8D12C36F21A0323700335F83 /* FallingApplesGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C36C21A0323700335F83 /* FallingApplesGameView.swift */; };
 		8D12C37121A0325400335F83 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12C37021A0325400335F83 /* Design.swift */; };
+		8D7AC0AA21A0575D00C49B82 /* AppleGameBackgroundImageGivver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7AC0A921A0575D00C49B82 /* AppleGameBackgroundImageGivver.swift */; };
 		9E4D21BA21A04EAD00921744 /* LabelX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4D21B921A04EAD00921744 /* LabelX.swift */; };
 		9E8AF7A121A01EAC00EBBD32 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8AF7A021A01EAC00EBBD32 /* Extentions.swift */; };
 		9E8AF7A321A01EDC00EBBD32 /* StartViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E8AF7A221A01EDC00EBBD32 /* StartViewController.storyboard */; };
@@ -58,6 +59,7 @@
 		8D12C36B21A0323700335F83 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8D12C36C21A0323700335F83 /* FallingApplesGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FallingApplesGameView.swift; sourceTree = "<group>"; };
 		8D12C37021A0325400335F83 /* Design.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		8D7AC0A921A0575D00C49B82 /* AppleGameBackgroundImageGivver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleGameBackgroundImageGivver.swift; sourceTree = "<group>"; };
 		9E4D21B921A04EAD00921744 /* LabelX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelX.swift; sourceTree = "<group>"; };
 		9E8AF7A021A01EAC00EBBD32 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		9E8AF7A221A01EDC00EBBD32 /* StartViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartViewController.storyboard; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				8D12C32D21A01C4400335F83 /* Assets.xcassets */,
 				8D12C32F21A01C4400335F83 /* LaunchScreen.storyboard */,
 				8D12C33221A01C4400335F83 /* Info.plist */,
+				8D7AC0A921A0575D00C49B82 /* AppleGameBackgroundImageGivver.swift */,
 			);
 			path = "Green-Space";
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				8D12C32721A01C4200335F83 /* AppDelegate.swift in Sources */,
 				8D12C36F21A0323700335F83 /* FallingApplesGameView.swift in Sources */,
 				8D12C35921A01D2F00335F83 /* ViewControllerAfterGame.swift in Sources */,
+				8D7AC0AA21A0575D00C49B82 /* AppleGameBackgroundImageGivver.swift in Sources */,
 				9E8AF7A721A0390600EBBD32 /* FadeView.swift in Sources */,
 				8D12C35D21A01FA200335F83 /* (null) in Sources */,
 			);
