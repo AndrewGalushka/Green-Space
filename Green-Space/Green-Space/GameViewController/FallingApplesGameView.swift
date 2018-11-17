@@ -15,8 +15,8 @@ protocol FallingApplesGameViewDelegate: class {
 
 class FallingApplesGameView: UIView {
     
-    let appleSize = CGSize(width: 50, height: 50)
-    let initailApearnceInterval = 1.0
+    let appleSize = CGSize(width: 70, height: 70)
+    let initailApearnceInterval = 0.75
     
     var timer: Timer?
     var apples = [CALayer]()
@@ -64,7 +64,7 @@ class FallingApplesGameView: UIView {
         
         apples.append(appleLayer)
         layer.addSublayer(appleLayer)
-        appleLayer.add(createDroppedAnimation(startPoint: origin, endPoint: animationEndPoint), forKey: nil)
+        appleLayer.add(createDroppedAnimation(startPoint: origin, endPoint: animationEndPoint), forKey: "position")
     }
     
     func randXCoordinate(forAppleSize: CGSize) -> CGFloat {
@@ -94,9 +94,19 @@ class FallingApplesGameView: UIView {
         
         let location = tapGesture.location(in: self)
         
+        var isHitted = false
+        
         for apple in apples {
             
-            if apple.presentation()?.frame.contains(location) ?? false {
+            let xOffset: CGFloat = 10.0
+            let yOffset: CGFloat = 10.0
+            
+            guard var normalFrame = apple.presentation()?.frame.insetBy(dx: -xOffset, dy: -yOffset) else { continue }
+            normalFrame = CGRect(x: normalFrame.origin.x - xOffset / 2.0, y: normalFrame.origin.y - yOffset / 2.0, width: normalFrame.width, height: normalFrame.height)
+            
+            if normalFrame.contains(location) {
+                
+                isHitted = true
                 
                 CATransaction.begin()
                 
@@ -107,10 +117,14 @@ class FallingApplesGameView: UIView {
                 opacityAmimation.isRemovedOnCompletion = false
                 opacityAmimation.fillMode = CAMediaTimingFillMode.forwards
                 
-                apple.add(opacityAmimation, forKey: nil)
+                apple.add(opacityAmimation, forKey: "opacity")
                 
                 CATransaction.commit()
             }
+        }
+        
+        if !isHitted {
+            delegate?.fallingApplesGameViewDidFailApple()
         }
     }
 }
@@ -128,7 +142,6 @@ extension FallingApplesGameView: CAAnimationDelegate {
                 
                 if let index = index {
                     apples.remove(at: index)
-                    delegate?.fallingApplesGameViewDidTapOnApple()
                 }
                 
             } else if anim == apple.animation(forKey: "opacity") {
@@ -138,7 +151,7 @@ extension FallingApplesGameView: CAAnimationDelegate {
                 
                 if let index = index {
                     apples.remove(at: index)
-                    delegate?.fallingApplesGameViewDidFailApple()
+                    delegate?.fallingApplesGameViewDidTapOnApple()
                 }
             }
         }
