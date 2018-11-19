@@ -24,17 +24,26 @@
                                 <color key="textColor" red="1" green="0.55537164551412421" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeu-HH-j6i">
+                                <rect key="frame" x="135.5" y="435" width="104" height="115"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="96"/>
+                                <color key="textColor" red="1" green="1" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="P5c-dZ-vrT" firstAttribute="centerX" secondItem="8uz-Q6-wil" secondAttribute="centerX" id="F4e-Sk-2q5"/>
                             <constraint firstItem="P5c-dZ-vrT" firstAttribute="leading" secondItem="pOj-sO-ciQ" secondAttribute="leading" constant="15" id="Lal-RL-okZ"/>
+                            <constraint firstItem="pOj-sO-ciQ" firstAttribute="bottom" secondItem="aeu-HH-j6i" secondAttribute="bottom" constant="117" id="QUu-eg-iko"/>
+                            <constraint firstItem="aeu-HH-j6i" firstAttribute="centerX" secondItem="8uz-Q6-wil" secondAttribute="centerX" id="Uq9-tg-SvZ"/>
                             <constraint firstItem="P5c-dZ-vrT" firstAttribute="centerY" secondItem="8uz-Q6-wil" secondAttribute="centerY" id="gNJ-9f-KCh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pOj-sO-ciQ"/>
                     </view>
                     <connections>
                         <outlet property="messageLabel" destination="P5c-dZ-vrT" id="zUC-0t-cjS"/>
+                        <outlet property="tenYear" destination="aeu-HH-j6i" id="YDc-rU-cD3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quz-75-uSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
